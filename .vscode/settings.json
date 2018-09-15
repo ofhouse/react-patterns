@@ -1,0 +1,8 @@
+{
+  "files.associations": {
+    "**/src/**/*.js": "javascriptreact"
+  },
+
+  // flow
+  "javascript.validate.enable": false,
+}
