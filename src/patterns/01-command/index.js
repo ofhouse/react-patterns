@@ -4,6 +4,7 @@
  * @flow
  */
 import * as React from 'react';
+
 import { type Command } from './models/command';
 import { JumpCommand, FireCommand, LeftCommand, RightCommand } from './models/commands';
 import Actor, { type ActorState } from './models/actor';
@@ -15,6 +16,9 @@ type State = {
 };
 
 export default class CommandPattern extends React.Component<Props, State> {
+  // The display title of the pattern
+  static title = 'Command Pattern';
+
   // Keybindings
   keyW: Command = new JumpCommand();
   keyA: Command = new LeftCommand();
