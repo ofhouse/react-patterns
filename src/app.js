@@ -33,12 +33,20 @@ const Contents = () => (
   </div>
 );
 
-const FullPage = ({ match }) => {
-  const { pageId } = match.params;
+class FullPage extends React.Component {
+  componentDidMount() {
+    const { pageId } = this.props.match.params;
+    const pageTitle = pages[pageId].title;
+    document.title = pageTitle;
+  }
+
+  render() {
+    const { pageId } = this.props.match.params;
   const Page = pages[pageId].component;
 
   return <Page />;
-};
+  }
+}
 
 const Routes = () => (
   <Switch>
