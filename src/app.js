@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 
 import './app.css';
 
-const files = ['01-command'];
+const files = ['01-command', '03-observer'];
 
 const pages = files.reduce((p, filename, index, fullArray) => {
   const page = require(`./patterns/${filename}`);
@@ -42,9 +42,9 @@ class FullPage extends React.Component {
 
   render() {
     const { pageId } = this.props.match.params;
-  const Page = pages[pageId].component;
+    const Page = pages[pageId].component;
 
-  return <Page />;
+    return <Page />;
   }
 }
 
