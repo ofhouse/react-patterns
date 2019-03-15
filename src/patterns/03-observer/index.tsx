@@ -6,15 +6,16 @@
 
 import * as React from 'react';
 
-import { createStore, type Action } from './store';
+import { createStore, Action } from './store';
 import { Provider } from './components/store-provider';
 import MessagesView from './components/messages-view';
 
-type StoreState = {
-  messages: Array<{ text: string }>,
+export type StoreState = {
+  messages: Array<{ text: string }>;
 };
 
 function reducer(state: StoreState, action: Action) {
+  // eslint-disable-next-line
   switch (action.type) {
     case 'ADD_MESSAGE': {
       return {
@@ -37,7 +38,7 @@ const store = createStore(reducer, initialState);
 
 type Props = {};
 type State = {
-  message: string,
+  message: string;
 };
 
 export default class ObserverPattern extends React.Component<Props, State> {

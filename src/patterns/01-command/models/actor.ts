@@ -1,9 +1,7 @@
-// @flow
-
 export type ActorState = {
-  posX: number,
-  posY: number,
-  shots: number,
+  posX: number;
+  posY: number;
+  shots: number;
 };
 
 class Actor {

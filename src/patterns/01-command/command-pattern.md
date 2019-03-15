@@ -1,1 +1,0 @@
-# Command pattern

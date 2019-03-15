@@ -1,18 +1,16 @@
 /**
  * Example for the command pattern
- *
- * @flow
  */
 import * as React from 'react';
 
-import { type Command } from './models/command';
+import { Command } from './models/command';
 import { JumpCommand, FireCommand, LeftCommand, RightCommand } from './models/commands';
-import Actor, { type ActorState } from './models/actor';
+import Actor, { ActorState } from './models/actor';
 
 type Props = {};
 
 type State = {
-  actor: ActorState,
+  actor: ActorState;
 };
 
 export default class CommandPattern extends React.Component<Props, State> {

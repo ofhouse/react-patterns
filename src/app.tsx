@@ -1,11 +1,21 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
+import React from 'react';
+import { BrowserRouter, Switch, Route, Link, RouteComponentProps } from 'react-router-dom';
 
 import './app.css';
 
 const files = ['01-command', '03-observer'];
 
-const pages = files.reduce((p, filename, index, fullArray) => {
+type Page = {
+  component: React.ComponentType<any>;
+  path: string;
+  title: string;
+};
+
+type Pages = {
+  [key: string]: Page;
+};
+
+const pages = files.reduce<Pages>((p, filename) => {
   const page = require(`./patterns/${filename}`);
 
   p[filename] = {
@@ -33,36 +43,32 @@ const Contents = () => (
   </div>
 );
 
-class FullPage extends React.Component {
+class FullPage extends React.Component<RouteComponentProps<{ pageId: string }>> {
   componentDidMount() {
-    const { pageId } = this.props.match.params;
+    const { pageId } = this.props.match!.params;
     const pageTitle = pages[pageId].title;
     document.title = pageTitle;
   }
 
   render() {
-    const { pageId } = this.props.match.params;
+    const { pageId } = this.props.match!.params;
     const Page = pages[pageId].component;
 
     return <Page />;
   }
 }
 
-const Routes = () => (
+const Routes: React.FC = () => (
   <Switch>
     <Route path="/patterns/:pageId" component={FullPage} />
     <Route path="/" component={Contents} />
   </Switch>
 );
 
-class App extends Component {
-  render() {
-    return (
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    );
-  }
-}
+const App: React.FC = () => (
+  <BrowserRouter>
+    <Routes />
+  </BrowserRouter>
+);
 
 export default App;
