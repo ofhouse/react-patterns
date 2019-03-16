@@ -2,13 +2,13 @@
  * React context which provides the store to other
  */
 
-import * as React from 'react';
+import React from 'react';
 
 import { StoreProps, Store } from '../store';
 
 const Context = React.createContext<Store>({
   subscribe: () => {},
-  getState: () => {},
+  getState: () => ({}),
 });
 
 class Provider extends React.Component<StoreProps> {
@@ -21,8 +21,8 @@ class Provider extends React.Component<StoreProps> {
   }
 }
 
-const connect = (Component: React.ComponentType<StoreProps>) => () => (
-  <Context.Consumer>{store => <Component store={store} />}</Context.Consumer>
+const connect = (Component: React.ComponentType<any>) => () => (
+  <Context.Consumer>{(store: Store) => <Component store={store} />}</Context.Consumer>
 );
 
 export { Provider, connect };

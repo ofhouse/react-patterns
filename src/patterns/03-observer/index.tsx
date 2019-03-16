@@ -1,17 +1,19 @@
 /**
  * Observer pattern
- *
- * @flow
  */
 
-import * as React from 'react';
+import React from 'react';
 
 import { createStore, Action } from './store';
 import { Provider } from './components/store-provider';
 import MessagesView from './components/messages-view';
 
+export interface Message {
+  text: String;
+}
+
 export type StoreState = {
-  messages: Array<{ text: string }>;
+  messages: Message[];
 };
 
 function reducer(state: StoreState, action: Action) {
@@ -48,7 +50,7 @@ export default class ObserverPattern extends React.Component<Props, State> {
     message: '',
   };
 
-  handleSubmit = e => {
+  handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
     const messageText = this.state.message;
 

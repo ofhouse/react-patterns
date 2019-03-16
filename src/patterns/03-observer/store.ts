@@ -15,13 +15,13 @@ export type Action = {
 
 type Listener = () => void;
 
-export interface Store {
+export interface Store<T = {}> {
   subscribe: (listener: Listener) => void;
-  getState: () => any;
+  getState: () => T;
 }
 
-export interface StoreProps {
-  store: Store;
+export interface StoreProps<T = {}> {
+  store: Store<T>;
 }
 
 function createStore(reducer: Reducer, initialState: any) {
