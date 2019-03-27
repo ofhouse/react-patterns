@@ -1,8 +1,8 @@
 import React from 'react';
-import { PageComponent } from '../../App';
 import { Accordion } from './components/accordion';
 import { Flex, FlexChild } from '../../components/base/flex';
 import { singleClosedStateReducer } from './components/state-reducers';
+import { PageComponent } from '../../types';
 
 interface AccordionItemProps {
   title: string;

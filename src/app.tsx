@@ -3,11 +3,7 @@ import { BrowserRouter, Switch, Route, Link, RouteComponentProps } from 'react-r
 
 import './app.css';
 
-const files = ['01-command', '03-observer', 'I-accordion'];
-
-export interface PageComponent<Props = {}> extends React.FC<Props> {
-  title: string;
-}
+const files = ['01-command', '03-observer', 'I-accordion', 'II-override'];
 
 type Page = {
   component: React.ComponentType<any>;
