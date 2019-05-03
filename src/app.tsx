@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route, Link, RouteComponentProps } from 'react-r
 
 import './app.css';
 
-const files = ['01-command', '03-observer', 'I-accordion'];
+const files = ['01-command', '03-observer', 'I-accordion', 'II-context'];
 
 export interface PageComponent<Props = {}> extends React.FC<Props> {
   title: string;
