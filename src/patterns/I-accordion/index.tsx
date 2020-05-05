@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageComponent } from '../../App';
+import { PageComponent } from '../../app';
 import { Accordion } from './components/accordion';
 import { Flex, FlexChild } from '../../components/base/flex';
 import { singleClosedStateReducer } from './components/state-reducers';
