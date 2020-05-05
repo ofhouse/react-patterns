@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { PageComponent } from '../../app';
 import { CountProvider } from './hooks/counter';
 import { DisplayCounter } from './components/display-counter';
 import { IncrementButton } from './components/increment-button';
+import { PageComponent } from '../../types/types';
 
 const ContextPattern: PageComponent = () => {
   return (

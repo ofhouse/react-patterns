@@ -1,19 +1,14 @@
-import { AccordionState, AccordionChanges } from './accordion';
+import { StateReducer } from './types.use-accordion';
 
-export function singleStateReducer(
-  state: AccordionState,
-  changes: AccordionChanges
-): AccordionState {
+export const singleStateReducer: StateReducer = (state, changes) => {
   if (changes.type === 'opening') {
     return { openIndexes: changes.openIndexes.slice(-1) };
   }
   return state;
-}
+};
 
-export function singleClosedStateReducer(
-  state: AccordionState,
-  changes: AccordionChanges
-): AccordionState {
+export const singleClosedStateReducer: StateReducer = (state, changes) => {
+  console.log(changes);
   if (changes.type === 'opening') {
     return { openIndexes: changes.openIndexes.slice(-1) };
   }
@@ -23,4 +18,4 @@ export function singleClosedStateReducer(
   }
 
   return state;
-}
+};
