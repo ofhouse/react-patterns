@@ -2,7 +2,7 @@
  * React context which provides the store to other
  */
 
-import React from 'react';
+import * as React from 'react';
 
 import { StoreProps, Store } from '../store';
 

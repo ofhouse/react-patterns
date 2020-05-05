@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { BrowserRouter, Switch, Route, Link, RouteComponentProps } from 'react-router-dom';
 
 import './app.css';
@@ -37,7 +37,7 @@ const Contents = () => (
 
     <h3>Game Programming Patterns</h3>
     <ol>
-      {Object.keys(pages).map(key => {
+      {Object.keys(pages).map((key) => {
         const page = pages[key];
         return (
           <li key={page.path}>

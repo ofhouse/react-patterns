@@ -2,7 +2,7 @@
  * Observer pattern
  */
 
-import React from 'react';
+import * as React from 'react';
 
 import { createStore, Action } from './store';
 import { Provider } from './components/store-provider';
@@ -74,7 +74,7 @@ export default class ObserverPattern extends React.Component<Props, State> {
             <input
               type="text"
               value={this.state.message}
-              onChange={e => this.setState({ message: e.target.value })}
+              onChange={(e) => this.setState({ message: e.target.value })}
             />
             <button type="submit">Add Message</button>
           </form>

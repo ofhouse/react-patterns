@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { PageComponent } from '../../app';
 import { Accordion } from './components/accordion';
 import { Flex, FlexChild } from '../../components/base/flex';
