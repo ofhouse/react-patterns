@@ -1,4 +1,4 @@
-import { StateReducer } from './types.use-accordion';
+import { StateReducer } from './use-accordion.types';
 
 export const singleStateReducer: StateReducer = (state, changes) => {
   if (changes.type === 'opening') {

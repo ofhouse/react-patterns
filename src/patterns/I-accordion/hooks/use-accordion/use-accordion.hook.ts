@@ -5,7 +5,7 @@ import {
   AccordionIndexKey,
   AccordionState,
   displayState,
-} from './types.use-accordion';
+} from './use-accordion.types';
 
 const defaultStateReducer: StateReducer = (state) => {
   return state;
