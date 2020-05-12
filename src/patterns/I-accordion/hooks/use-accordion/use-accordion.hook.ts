@@ -56,7 +56,7 @@ function useAccordion({
     if (onStateChange) {
       onStateChange(state);
     }
-  }, [state]);
+  }, [state, onStateChange]);
 
   return { handleItemClick, openIndexes: getState().openIndexes };
 }
